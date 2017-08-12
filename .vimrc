@@ -3,6 +3,8 @@ syntax on
 set backspace=2
 set autoindent
 set smartcase
+set hlsearch
+set incsearch
 imap <f1> <esc>:set autoindent<CR>i
 imap <f3> <esc>:set noautoindent<CR>i
 imap <f2> <esc>:w!<CR>li
@@ -11,6 +13,7 @@ nmap <f10> :q<CR>
 nmap <INSERT> i
 nmap q :wq!<CR>
 map <BACKSPACE> i<CR><BACKSPACE>
+map <f5> <leader>s
 nmap <BACKSPACE> i<CR><BACKSPACE>
 map <TAB> :tabnext<CR>
 nmap <TAB> :tabnext<CR>
@@ -19,6 +22,7 @@ nmap <C-t> :tabnew<CR>:e
 imap <C-t> <Esc>:tabnew<CR>:e
 nmap <CR> i<CR>
 nmap <f4> vat
+
 set backup
 function! BackupDir()
 let l:backupdir=$HOME.'/.vim/backup/'.
@@ -30,6 +34,7 @@ let &backupdir=l:backupdir
 let &backupext=strftime('~%Y-%m-%d-%H-%M-%S~')
 endfunction
 autocmd! bufwritepre * call BackupDir()
+
 set wildmenu
 set wcm=<Tab>
 menu Encoding.koi8-r :e ++enc=koi8-r ++ff=unix<CR>
@@ -42,6 +47,8 @@ set tabstop=2
 
 
 let g:typescript_indent_disable = 1
+let g:gruvbox_contrast_dark = 'hard'
+
 set nocompatible
 filetype off
 
@@ -55,11 +62,17 @@ Bundle 'leafgarland/typescript-vim'
 Bundle 'tmhedberg/matchit'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'posva/vim-vue'
-
+Plugin 'kien/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'morhetz/gruvbox'
 
 
 
 call vundle#end()
+
+map <Leader> <Plug>(easymotion-prefix)
+colorscheme gruvbox
+set background=dark
 
 filetype plugin on
 
