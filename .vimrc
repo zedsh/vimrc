@@ -43,8 +43,8 @@ menu Encoding.cp866 :e ++enc=cp866 ++ff=dos<CR>
 menu Encoding.utf-8 :e ++enc=utf8 <CR>
 menu Encoding.koi8-u :e ++enc=koi8-u ++ff=unix<CR>
 map <F8> :emenu Encoding.<TAB>
-set tabstop=2
-
+set tabstop=4
+set expandtab
 
 let g:typescript_indent_disable = 1
 let g:gruvbox_contrast_dark = 'hard'
