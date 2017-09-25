@@ -33,7 +33,6 @@ nmap <f2> :w!<CR>
 nmap <f4> vat
 map <f5> <leader>s
 nmap <f6> :Tlist<CR>
-map <F7> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 map <F8> :emenu Encoding.<TAB>
 map <F9> :emenu Actions.<TAB>
 
@@ -50,6 +49,8 @@ set noswapfile
 nmap <C-t> :tabnew<CR>
 imap <C-t> <Esc>:tabnew<CR>
 nmap <CR> i<CR>
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+"nnoremap <C-]> :tabnew %<CR>g<C-]>
 
 set backup
 function! BackupDir()
