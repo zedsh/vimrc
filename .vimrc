@@ -1,27 +1,55 @@
 highlight Comment ctermfg=LightMagenta
 syntax on
+
+set wildmenu
+set wcm=<Tab>
+menu Encoding.koi8-r :e ++enc=koi8-r ++ff=unix<CR>
+menu Encoding.windows-1251 :e ++enc=cp1251 ++ff=dos<CR>
+menu Encoding.cp866 :e ++enc=cp866 ++ff=dos<CR>
+menu Encoding.utf-8 :e ++enc=utf8 <CR>
+menu Encoding.koi8-u :e ++enc=koi8-u ++ff=unix<CR>
+
+set wildmenu
+set wcm=<Tab>
+menu Actions.bind_ctags :UpdateTags -R<CR>
+menu Actions.generate_ctags :!ctags -R <CR>
+
+set wildmenu
+set wcm=<Tab>
+menu Indent.autoindent :set autoindent<CR>
+menu Indent.no_autoinden :set noautoindent<CR>
+
+
+
 set backspace=2
 set autoindent
+set smarttab
 set smartcase
 set hlsearch
 set incsearch
-imap <f1> <esc>:set autoindent<CR>i
-imap <f3> <esc>:set noautoindent<CR>i
+map <f1> :emenu Indent.<TAB>
 imap <f2> <esc>:w!<CR>li
 nmap <f2> :w!<CR>
-nmap <f10> :q<CR>
-nmap <INSERT> i
-nmap q :wq!<CR>
-map <BACKSPACE> i<CR><BACKSPACE>
+nmap <f4> vat
 map <f5> <leader>s
-nmap <BACKSPACE> i<CR><BACKSPACE>
+nmap <f6> :Tlist<CR>
+map <F7> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+map <F8> :emenu Encoding.<TAB>
+map <F9> :emenu Actions.<TAB>
+
+
+nmap <INSERT> i
+nmap Q :wqa!<CR>
+nmap q :q<CR>
+map <BACKSPACE> i<BACKSPACE>
+nmap <BACKSPACE> i<BACKSPACE>
 map <TAB> :tabnext<CR>
 nmap <TAB> :tabnext<CR>
+map <S-TAB> :tabprevious<CR>
 set noswapfile
-nmap <C-t> :tabnew<CR>:e
-imap <C-t> <Esc>:tabnew<CR>:e
+nmap <C-t> :tabnew<CR>
+imap <C-t> <Esc>:tabnew<CR>
 nmap <CR> i<CR>
-nmap <f4> vat
 
 set backup
 function! BackupDir()
@@ -34,16 +62,10 @@ let &backupdir=l:backupdir
 let &backupext=strftime('~%Y-%m-%d-%H-%M-%S~')
 endfunction
 autocmd! bufwritepre * call BackupDir()
+         
 
-set wildmenu
-set wcm=<Tab>
-menu Encoding.koi8-r :e ++enc=koi8-r ++ff=unix<CR>
-menu Encoding.windows-1251 :e ++enc=cp1251 ++ff=dos<CR>
-menu Encoding.cp866 :e ++enc=cp866 ++ff=dos<CR>
-menu Encoding.utf-8 :e ++enc=utf8 <CR>
-menu Encoding.koi8-u :e ++enc=koi8-u ++ff=unix<CR>
-map <F8> :emenu Encoding.<TAB>
 set tabstop=4
+set shiftwidth=4
 set expandtab
 
 let g:typescript_indent_disable = 1
@@ -65,7 +87,12 @@ Plugin 'posva/vim-vue'
 Plugin 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'morhetz/gruvbox'
-
+Plugin 'mileszs/ack.vim'
+Plugin 'xolox/vim-easytags'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/IndexedSearch'
+Bundle 'vim-scripts/taglist.vim'
+Plugin 'xolox/vim-misc'
 
 
 call vundle#end()
@@ -78,3 +105,15 @@ filetype plugin on
 
 autocmd FileType vue syntax sync fromstart
 
+let g:ctrlp_show_hidden = 1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.jpeg
+let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
+let g:ctrlp_max_files = 100000
+let g:syntastic_enable_signs=1
+
+let g:easytags_file = './tags'
+let g:easytags_auto_highlight = 0
+let g:easytags_events = ['BufWritePost']
+let g:easytags_async = 1
