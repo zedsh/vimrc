@@ -13,6 +13,8 @@ set wildmenu
 set wcm=<Tab>
 menu Actions.bind_ctags :UpdateTags -R<CR>
 menu Actions.generate_ctags :!ctags -R <CR>
+menu Actions.show_tagbar :TagbarToggle<CR>
+menu Actions.show_nerd_tree :NERDTree<CR>
 
 set wildmenu
 set wcm=<Tab>
@@ -44,7 +46,7 @@ map <BACKSPACE> i<BACKSPACE>
 nmap <BACKSPACE> i<BACKSPACE>
 map <TAB> :tabnext<CR>
 nmap <TAB> :tabnext<CR>
-map <S-TAB> :tabprevious<CR>
+map <S-TAB> :bn<CR>
 set noswapfile
 nmap <C-t> :tabnew<CR>
 imap <C-t> <Esc>:tabnew<CR>
@@ -94,6 +96,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/taglist.vim'
 Plugin 'xolox/vim-misc'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-php/tagbar-phpctags.vim'
+Plugin 'scrooloose/nerdtree'
 
 
 call vundle#end()
@@ -118,3 +123,4 @@ let g:easytags_file = './tags'
 let g:easytags_auto_highlight = 0
 let g:easytags_events = ['BufWritePost']
 let g:easytags_async = 1
+
