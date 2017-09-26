@@ -90,14 +90,11 @@ Plugin 'posva/vim-vue'
 Plugin 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'morhetz/gruvbox'
-Plugin 'mileszs/ack.vim'
-Plugin 'xolox/vim-easytags'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/IndexedSearch'
-Bundle 'vim-scripts/taglist.vim'
 Plugin 'xolox/vim-misc'
-Plugin 'majutsushi/tagbar'
 Plugin 'vim-php/tagbar-phpctags.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 
 
@@ -119,8 +116,4 @@ let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
 let g:ctrlp_max_files = 100000
 let g:syntastic_enable_signs=1
 
-let g:easytags_file = './tags'
-let g:easytags_auto_highlight = 0
-let g:easytags_events = ['BufWritePost']
-let g:easytags_async = 1
-
+let g:tagbar_phpctags_memory_limit = '512M'
