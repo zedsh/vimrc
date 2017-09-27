@@ -15,6 +15,7 @@ menu Actions.bind_ctags :UpdateTags -R<CR>
 menu Actions.generate_ctags :!ctags -R <CR>
 menu Actions.show_tagbar :TagbarToggle<CR>
 menu Actions.show_nerd_tree :NERDTree<CR>
+menu Actions.gdiff :Gdiff<CR>
 
 set wildmenu
 set wcm=<Tab>
@@ -93,9 +94,9 @@ Plugin 'morhetz/gruvbox'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/IndexedSearch'
 Plugin 'xolox/vim-misc'
-Plugin 'vim-php/tagbar-phpctags.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
 
 
 call vundle#end()
