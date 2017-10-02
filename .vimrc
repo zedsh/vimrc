@@ -14,13 +14,12 @@ set wcm=<Tab>
 menu Actions.bind_ctags :UpdateTags -R<CR>
 menu Actions.generate_ctags :!ctags -R <CR>
 menu Actions.show_tagbar :TagbarToggle<CR>
-menu Actions.show_nerd_tree :NERDTree<CR>
 menu Actions.gdiff :Gdiff<CR>
 
 set wildmenu
 set wcm=<Tab>
-menu Indent.autoindent :set autoindent<CR>
-menu Indent.no_autoinden :set noautoindent<CR>
+menu Indent.autoindent :set autoindent<CR>i
+menu Indent.no_autoinden :set noautoindent<CR>i
 
 
 
@@ -31,8 +30,9 @@ set smartcase
 set hlsearch
 set incsearch
 map <f1> :emenu Indent.<TAB>
-imap <f2> <esc>:w!<CR>li
-nmap <f2> :w!<CR>
+imap <f1> <esc>:emenu Indent.<TAB>
+imap <f2> <esc>:wa!<CR>li
+nmap <f2> :wa!<CR>
 nmap <f4> vat
 map <f5> <leader>s
 nmap <f6> :Tlist<CR>
@@ -45,12 +45,9 @@ nmap Q :wqa!<CR>
 nmap q :q<CR>
 map <BACKSPACE> i<BACKSPACE>
 nmap <BACKSPACE> i<BACKSPACE>
-map <TAB> :tabnext<CR>
-nmap <TAB> :tabnext<CR>
+map <TAB> <C-W><C-W>  
 map <S-TAB> :bn<CR>
 set noswapfile
-nmap <C-t> :tabnew<CR>
-imap <C-t> <Esc>:tabnew<CR>
 nmap <CR> i<CR>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 "nnoremap <C-]> :tabnew %<CR>g<C-]>
@@ -118,3 +115,5 @@ let g:ctrlp_max_files = 100000
 let g:syntastic_enable_signs=1
 
 let g:tagbar_phpctags_memory_limit = '512M'
+
+autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
