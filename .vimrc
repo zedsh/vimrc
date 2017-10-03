@@ -33,6 +33,7 @@ map <f1> :emenu Indent.<TAB>
 imap <f1> <esc>:emenu Indent.<TAB>
 imap <f2> <esc>:wa!<CR>li
 nmap <f2> :wa!<CR>
+nmap <f3> :NERDTreeFind<CR> 
 nmap <f4> vat
 map <f5> <leader>s
 nmap <f6> :Tlist<CR>
@@ -115,5 +116,5 @@ let g:ctrlp_max_files = 100000
 let g:syntastic_enable_signs=1
 
 let g:tagbar_phpctags_memory_limit = '512M'
+let NERDTreeShowHidden=1
 
-autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
