@@ -35,10 +35,9 @@ imap <f2> <esc>:wa!<CR>li
 nmap <f2> :wa!<CR>
 nmap <f3> :NERDTreeFind<CR> 
 imap <f3> <esc>:NERDTreeFind<CR> 
-nmap <S-F3> :TagbarToggle<CR>
 nmap <f4> vat
 map <f5> <leader>s
-nmap <f6> :Tlist<CR>
+nmap <f6> :TagbarToggle<CR>
 map <F8> :emenu Encoding.<TAB>
 map <F9> :emenu Actions.<TAB>
 
