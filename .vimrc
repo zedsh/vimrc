@@ -11,9 +11,8 @@ menu Encoding.koi8-u :e ++enc=koi8-u ++ff=unix<CR>
 
 set wildmenu
 set wcm=<Tab>
+menu Actions.tagbarShow :TagbarToggle<CR>
 menu Actions.bind_ctags :UpdateTags -R<CR>
-menu Actions.generate_ctags :!ctags -R <CR>
-menu Actions.show_tagbar :TagbarToggle<CR>
 menu Actions.gdiff :Gdiff<CR>
 
 set wildmenu
@@ -37,7 +36,7 @@ nmap <f3> :NERDTreeFind<CR>
 imap <f3> <esc>:NERDTreeFind<CR> 
 nmap <f4> vat
 map <f5> <leader>s
-nmap <f6> :TagbarToggle<CR>
+nmap <f6> :Tlist<CR>
 map <F8> :emenu Encoding.<TAB>
 map <F9> :emenu Actions.<TAB>
 
@@ -92,6 +91,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'morhetz/gruvbox'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/IndexedSearch'
+Bundle 'vim-scripts/taglist.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
