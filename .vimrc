@@ -11,6 +11,7 @@ menu Encoding.koi8-u :e ++enc=koi8-u ++ff=unix<CR>
 
 set wildmenu
 set wcm=<Tab>
+menu Actions.psr_dir :call PhpCsFixerFixDirectory()<CR>
 menu Actions.tagbarShow :TagbarToggle<CR>
 menu Actions.bind_ctags :UpdateTags -R<CR>
 menu Actions.gdiff :Gdiff<CR>
@@ -39,6 +40,7 @@ map <f5> <leader>s
 nmap <f6> :Tlist<CR>
 map <F8> :emenu Encoding.<TAB>
 map <F9> :emenu Actions.<TAB>
+map <F12> :call PhpCsFixerFixFile()<CR>
 
 
 nmap <INSERT> i
