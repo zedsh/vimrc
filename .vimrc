@@ -48,7 +48,6 @@ nmap Q :wqa!<CR>
 nmap q :q<CR>
 map <BACKSPACE> i<BACKSPACE>
 nmap <BACKSPACE> i<BACKSPACE>
-map <TAB> <C-W><C-W>  
 map <S-TAB> :bn<CR>
 set noswapfile
 nmap <CR> i<CR>
@@ -119,6 +118,18 @@ let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp'
 let g:ctrlp_max_files = 100000
 let g:syntastic_enable_signs=1
 
+let Tlist_Compact_Format=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_GainFocus_On_ToggleOpen=1
+let Tlist_Highlight_Tag_On_BufEnter=1
+let Tlist_Use_Right_Window=1
+
+
 let g:tagbar_phpctags_memory_limit = '512M'
 let NERDTreeShowHidden=1
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
