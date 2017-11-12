@@ -50,7 +50,7 @@ map <BACKSPACE> i<BACKSPACE>
 nmap <BACKSPACE> i<BACKSPACE>
 map <S-TAB> :bn<CR>
 set noswapfile
-nmap <CR> i<CR>
+"nmap <CR> i<CR>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 "nnoremap <C-]> :tabnew %<CR>g<C-]>
 
@@ -98,6 +98,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'MattesGroeger/vim-bookmarks'
 
 
 call vundle#end()
@@ -109,6 +110,7 @@ set background=dark
 filetype plugin on
 
 autocmd FileType vue syntax sync fromstart
+
 
 let g:ctrlp_show_hidden = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.jpeg
@@ -133,3 +135,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+let g:bookmark_highlight_lines = 1
+let g:bookmark_disable_ctrlp = 1
+let g:bookmark_location_list = 1
