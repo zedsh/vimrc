@@ -99,7 +99,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'MattesGroeger/vim-bookmarks'
-
+Plugin 'digitaltoad/vim-pug'
 
 call vundle#end()
 
@@ -107,7 +107,7 @@ map <Leader> <Plug>(easymotion-prefix)
 colorscheme gruvbox
 set background=dark
 
-filetype plugin on
+filetype plugin indent on
 
 autocmd FileType vue syntax sync fromstart
 
