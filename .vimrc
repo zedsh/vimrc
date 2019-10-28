@@ -29,6 +29,8 @@ set smarttab
 set smartcase
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
 map <f1> :emenu Indent.<TAB>
 imap <f1> <esc>:emenu Indent.<TAB>
 imap <f2> <esc>:wa!<CR>li
