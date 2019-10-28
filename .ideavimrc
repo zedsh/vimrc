@@ -1,0 +1,25 @@
+set ignorecase
+set smartcase
+set scrolloff=3         " 3 lines above/below cursor when scrolling
+set showmode
+set number
+
+
+" Integrate with system clipboard
+set clipboard=unnamedplus,unnamed
+
+let mapleader = ","
+
+nmap <leader>f :action KJumpAction<cr>
+nnoremap <Leader>d  <C-d>
+nnoremap <Leader>u  <C-u>
+nmap == :action ReformatCode<cr>
+
+" IdeaVim uses 'a' for alt instead of Vim's 'm'
+nmap <a-j> 15gj
+nmap <a-k> 15gk
+
+" Won't work in visual mode (with vmap) for some reason.
+" Use default map of <c-/> for that.
+nmap gcc :action CommentByLineComment<cr>
+$test = ( );
